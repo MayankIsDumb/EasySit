@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "sit",
+  "version": "${version}",
+  "name": "Easy Sit",
+  "description": "A simple mod that lets you sit on slabs & stairs, or lay down anywhere. Works across multiple Minecraft versions.",
+  "authors": [
+    "mayank",
+    "AFKZ Digitals"
+  ],
+  "contact": {
+    "homepage": "",
+    "issues": "",
+    "sources": ""
+  },
+  "license": "MIT",
+  "icon": "assets/sit/icon.png",
+  "environment": "*",
+  "mixins": [
+    "sit.mixins.json"
+  ],
+  "entrypoints": {
+    "main": [
+      "bl4ckscor3.mod.sit.Sit"
+    ],
+    "client": [
+      "bl4ckscor3.mod.sit.SitClient"
+    ],
+    "modmenu": [
+      "bl4ckscor3.mod.sit.ModMenuIntegration"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.4.0",
+    "fabric-api": ">=0.28.0",
+    "minecraft": "${minecraft_version_range}",
+    "java": ">=21",
+    "cloth-config": ">=9.0.92"
+  }
+}

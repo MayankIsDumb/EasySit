@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "bl4ckscor3.mod.sit.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "PlayerPoseMixin"${extra_mixins}
+  ],
+  "client": [
+    "HumanoidRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

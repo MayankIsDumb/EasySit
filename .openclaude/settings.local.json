@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp -r 'C:\\\\Users\\\\mayank\\\\Desktop\\\\2\\\\gradle' 'C:\\\\Users\\\\mayank\\\\Desktop\\\\Easy-Sit-Mod\\\\gradle')",
+      "Bash(cp 'C:\\\\Users\\\\mayank\\\\Desktop\\\\2\\\\gradlew' 'C:\\\\Users\\\\mayank\\\\Desktop\\\\Easy-Sit-Mod\\\\gradlew')",
+      "Bash(cp 'C:\\\\Users\\\\mayank\\\\Desktop\\\\2\\\\gradlew.bat' 'C:\\\\Users\\\\mayank\\\\Desktop\\\\Easy-Sit-Mod\\\\gradlew.bat')"
+    ]
+  }
+}
