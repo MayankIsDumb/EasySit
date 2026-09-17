@@ -45,7 +45,7 @@ public class LayEntity extends Entity {
 	@Override
 	public void remove(RemovalReason reason) {
 		super.remove(reason);
-		SitUtil.removeLayEntity(level(), blockPosition());
+		SitUtil.removeLayEntity(level(), this);
 	}
 
 	@Override

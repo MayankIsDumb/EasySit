@@ -207,6 +207,7 @@ public class Sit implements ModInitializer {
 				if (sitEntity != null) {
 					SitUtil.removeSitEntity(level, pos);
 					sitEntity.ejectPassengers();
+					sitEntity.discard();
 				}
 
 				LayEntity layEntity = SitUtil.getLayEntity(level, pos);
@@ -214,6 +215,7 @@ public class Sit implements ModInitializer {
 				if (layEntity != null) {
 					SitUtil.removeLayEntity(level, pos);
 					layEntity.ejectPassengers();
+					layEntity.discard();
 				}
 			}
 		});

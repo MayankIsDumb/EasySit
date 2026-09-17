@@ -86,6 +86,28 @@ public class SitUtil {
 	}
 
 	/**
+	 * Removes a sit entity from the map by entity instance. Use this when the entity's position does not match the
+	 * seated block position (e.g. the seat floats 0.5-1.0 blocks above it). This does not remove the entity itself.
+	 *
+	 * @param level The level to remove the entity from
+	 * @param entity The entity to remove
+	 * @return true if an entry was removed, false otherwise. This is always false on the client.
+	 */
+	public static boolean removeSitEntity(Level level, SitEntity entity) {
+		if (!level.isClientSide()) {
+			boolean removed = false;
+
+			for (Map<BlockPos, Pair<SitEntity, Vec3>> map : OCCUPIED.values()) {
+				removed |= map.values().removeIf(pair -> pair.getLeft() == entity);
+			}
+
+			return removed;
+		}
+
+		return false;
+	}
+
+	/**
 	 * Gets the sit entity that is situated at the given position in the given level
 	 *
 	 * @param level The level to get the entity from
@@ -199,6 +221,28 @@ public class SitUtil {
 				LAY_OCCUPIED.get(id).remove(pos);
 				return true;
 			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Removes a lay entity from the map by entity instance. Use this when the entity's position does not match the
+	 * block position (e.g. the entity floats above it). This does not remove the entity itself.
+	 *
+	 * @param level The level to remove the entity from
+	 * @param entity The entity to remove
+	 * @return true if an entry was removed, false otherwise. This is always false on the client.
+	 */
+	public static boolean removeLayEntity(Level level, LayEntity entity) {
+		if (!level.isClientSide()) {
+			boolean removed = false;
+
+			for (Map<BlockPos, Pair<LayEntity, Vec3>> map : LAY_OCCUPIED.values()) {
+				removed |= map.values().removeIf(pair -> pair.getLeft() == entity);
+			}
+
+			return removed;
 		}
 
 		return false;
